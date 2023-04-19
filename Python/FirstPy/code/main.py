@@ -24,6 +24,7 @@ def TestArrayHandling():
         _namelist.remove("Tom")
     except:
         print("Tom does not exist!")
+        print("Jerry does not exist!")
         raise Exception("Tom does not exist")
     
     _length = len(_namelist)
