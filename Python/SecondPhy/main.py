@@ -2,9 +2,19 @@ import math
 import os
 
 d = {10001 : "Bob", 10002: "Kevin"}
-class punkt(object):
-    x = 0
-    y = 0
+class Punkt(object):
+    """Attribute:
+        x, y
+    """
+    def __init__(self, xin = 0, yin= 0):
+            self.x = xin
+            self.y = yin
+    
+    def setx(self, wert):
+        self.x = wert;
+    def getx(self):
+        return self.x
+        
 
 def testfunc():
     d[10001] = "Gru"
@@ -47,18 +57,29 @@ def testChapter5():
         if os.path.isfile(os.path.join(_filepath, _file)):
             print(_file)
 
-    _p1 = punkt()
-    _p1.x = 5 
-    _p1.y = 10
-    _p2 = punkt()
+    _p1 = Punkt()
+    #_p1.x = 5 
+    #_p1.y = 10
+    _p2 = Punkt()
     _p2.x = 10
     _p2.y = 20
 
     print(_p1.x)
-    print(_p2.x)        
+    print(_p2.x)
+    #_res = _p2.x / _p1.x   
+
+    _p3 = Punkt(11,33)
+    print("Bevor Setter: ",_p3.x)
+    _p3.setx(22);
+    print("Nach Setter 22: ",_p3.x)
+
 
 def main():
-    #testChapter1to4()
-    testChapter5()
+    try:
+        #testChapter1to4()
+        testChapter5()
+    except:
+        print("Fehler aufgetreten")
 
+########################################## Main #####################################
 main()
