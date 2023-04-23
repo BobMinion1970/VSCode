@@ -1,7 +1,10 @@
 import math
-import numpy as np
+import os
 
 d = {10001 : "Bob", 10002: "Kevin"}
+class punkt(object):
+    x = 0
+    y = 0
 
 def testfunc():
     d[10001] = "Gru"
@@ -9,7 +12,7 @@ def testfunc():
 def testMoreReturnValues(x):
     return x+10, x+20, x +30
 
-def main():
+def testChapter1to4():
     a = 5.5
     print(type(a))
     print(math.sqrt(a))
@@ -36,5 +39,26 @@ def main():
     #print(_t)
     result = testMoreReturnValues(3)  
     print(result)
+
+def testChapter5():
+    _filepath = "e:\Develop"
+    _files = os.listdir(_filepath)
+    for _file in _files:
+        if os.path.isfile(os.path.join(_filepath, _file)):
+            print(_file)
+
+    _p1 = punkt()
+    _p1.x = 5 
+    _p1.y = 10
+    _p2 = punkt()
+    _p2.x = 10
+    _p2.y = 20
+
+    print(_p1.x)
+    print(_p2.x)        
+
+def main():
+    #testChapter1to4()
+    testChapter5()
 
 main()
