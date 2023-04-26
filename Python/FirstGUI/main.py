@@ -7,22 +7,22 @@ class myWindow(tkinter.Frame):
         self.createWidgets()
 
     def createWidgets(self):
-        self.firstName = tkinter.Entry(self)
-        self.firstName.pack()
-        self.firstName["width"] = 40
+        self.lblFirstName = tkinter.Entry(self)
+        self.lblFirstName.pack()
+        self.lblFirstName["width"] = 40
         self.name = tkinter.StringVar()
         self.name.set("Please insert your name: ")
-        self.firstName["textvariable"] = self.name
+        self.lblFirstName["textvariable"] = self.name
 
-        self.exitButton = tkinter.Button(self)
-        self.exitButton["text"] = "Exit"
-        self.exitButton["command"] = self.quit
-        self.exitButton.pack(side="right")
+        self.btnExit = tkinter.Button(self)
+        self.btnExit["text"] = "Exit"
+        self.btnExit["command"] = self.quit
+        self.btnExit.pack(side="right")
 
-        self.deleteButton = tkinter.Button(self)
-        self.deleteButton["text"] = "Delete"
-        self.deleteButton["command"] = self.onDelete
-        self.deleteButton.pack(side="left")
+        self.btnDelete = tkinter.Button(self)
+        self.btnDelete["text"] = "Delete"
+        self.btnDelete["command"] = self.onDelete
+        self.btnDelete.pack(side="left")
 
     def onDelete(self):
         self.name.set("")
