@@ -10,7 +10,7 @@ class Person():
     
     def printPerson(self):
         """Method printPerson"""
-        print(self.Name + ", " + self.Ort)
+        print(self.Name + ", " + self.Ort + ", " + self.Geburtsdatum)
         
 
 ########################################### Functions ####################################
@@ -52,7 +52,7 @@ def TestArrayHandling():
         _index = _index + 1
 
 def TestClasses():
-    p2 = Person("Michael", "Büchenbach")
+    p2 = Person("Michael", "Büchenbach", "01.01.2001")
     #print(p1.__dict__())
     p2.printPerson()
     
