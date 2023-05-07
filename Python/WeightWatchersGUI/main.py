@@ -38,6 +38,7 @@ def main():
     root = tkinter.Tk(screenName="WeightWatcher")
     root.title("Weight Watcher's Fun")
     root.geometry('440x200')
+    root.update()
     app = myProgram(root)
     app.mainloop()
 

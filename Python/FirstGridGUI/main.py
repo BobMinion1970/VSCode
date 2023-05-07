@@ -11,7 +11,7 @@ class FirstGridGUI(tkinter.Frame):
     
     def onLabelClick(self, event):
         if event.widget["text"] == "1":
-            self.lblGray.configure(bg="blue")
+            self.lblGray.configure(bg="red")
 
         if self.lblGray.cget("bg") == "gray":
             self.lblGray.configure(bg="red")

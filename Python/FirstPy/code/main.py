@@ -1,6 +1,23 @@
+############################################ Classes #####################################
+class Person():
+    """ Klasse allgemeine Eigenschaften von Personen 
+    Attributes: Name, Ort
+    """
+    def __init__(self, name, ort, geburtsdatum):
+        self.Name = name
+        self.Ort = ort
+        self.Geburtsdatum = geburtsdatum
+    
+    def printPerson(self):
+        """Method printPerson"""
+        print(self.Name + ", " + self.Ort)
+        
+
+########################################### Functions ####################################
 def main():
     try:
-        TestArrayHandling()
+        TestClasses()
+        #TestArrayHandling()
     except Exception: 
         print("something went wrong")
     finally: 
@@ -34,4 +51,11 @@ def TestArrayHandling():
         print(_namelist[_index])
         _index = _index + 1
 
+def TestClasses():
+    p2 = Person("Michael", "Büchenbach")
+    #print(p1.__dict__())
+    p2.printPerson()
+    
+###################################### Main #####################################
 main()
+    #print("%.2d-%.2d-%.4d" % (datum.Tag, datum.Monat, datum.Jahr))  
