@@ -1,3 +1,5 @@
+from datetime import datetime, timedelta
+
 ############################################ Classes #####################################
 class Person():
     """ Klasse allgemeine Eigenschaften von Personen 
@@ -26,9 +28,9 @@ def main():
     try:
         TestCustomer()
         #TestArrayHandling()
-    except Exception: 
-        print("something went wrong")
-    finally: 
+    except Exception as e: 
+        print(e.__str__())
+    finally:
         print("Good bye, have pleasure wherever you are!")
      
 def TestArrayHandling():
@@ -40,7 +42,7 @@ def TestArrayHandling():
         print("********************")
     else:
         print("Failure")
-    
+
     _namelist = []
     _namelist.append("Kevin")
     _namelist.append("Bob")
@@ -77,4 +79,3 @@ def TestCustomer():
    #print(_person.__dict__())
 ###################################### Main #####################################
 main()
-    #print("%.2d-%.2d-%.4d" % (datum.Tag, datum.Monat, datum.Jahr))  
