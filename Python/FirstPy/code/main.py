@@ -12,16 +12,24 @@ class Person():
         """Method printPerson"""
         print(self.Name + ", " + self.Ort + ", " + self.Geburtsdatum)
         
+class Customer(Person):
+    """ Klasse allgemeine Eigenschaften von Customer 
+    Attributes: Account, Balance 
+    """
+    def __init__(self, _person, _account, _balance):
+        super().__init__(_person.Name, _person.Ort, _person.Geburtsdatum)
+        self.balance = _balance
+        self.account = _account
 
 ########################################### Functions ####################################
 def main():
     try:
-        TestClasses()
+        TestCustomer()
         #TestArrayHandling()
     except Exception: 
         print("something went wrong")
     finally: 
-        print("But we will continue soon!")
+        print("Good bye, have pleasure wherever you are!")
      
 def TestArrayHandling():
     print ("Hello PyWorld")
@@ -55,7 +63,18 @@ def TestClasses():
     p2 = Person("Michael", "Büchenbach", "01.01.2001")
     #print(p1.__dict__())
     p2.printPerson()
-    
+
+def TestCustomer():
+    _name = input("Name: ")     
+    _ort = input("Ort: ") 
+    _geb = input("Geburtstag: ")
+    _person = Person(_name, _ort, _geb)
+    print("Person name: " + _person.Name)
+    _konto = input("Account: ")
+    _balance = float(input("Balance: "))
+    _customer = Customer(_person, _konto, _balance)
+    print("Customer name: " + _customer.Name)
+   #print(_person.__dict__())
 ###################################### Main #####################################
 main()
     #print("%.2d-%.2d-%.4d" % (datum.Tag, datum.Monat, datum.Jahr))  
