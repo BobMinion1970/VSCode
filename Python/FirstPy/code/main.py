@@ -69,7 +69,7 @@ def TestClasses():
 def TestCustomer():
     _name = input("Name: ")     
     _ort = input("Ort: ") 
-    _geb = input("Geburtstag: ")
+    _geb = input("Geburtstag (dd/mm/yyyy): ")
     _person = Person(_name, _ort, _geb)
     print("Person name: " + _person.Name)
     _konto = input("Account: ")
