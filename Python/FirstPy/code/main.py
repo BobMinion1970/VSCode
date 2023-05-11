@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+from array import array
 
 ############################################ Classes #####################################
 class Person():
@@ -26,7 +27,7 @@ class Customer(Person):
 ########################################### Functions ####################################
 def main():
     try:
-        TestCustomer()
+        TestCollections()
         #TestArrayHandling()
     except Exception as e: 
         print(e.__str__())
@@ -77,5 +78,27 @@ def TestCustomer():
     _customer = Customer(_person, _konto, _balance)
     print("Customer name: " + _customer.Name)
    #print(_person.__dict__())
+   
+def TestCollections():
+    print("############################# Arrays #####################################")
+    _numbers = array('i')
+    _numbers.append(5)
+    _numbers.append(7)
+    print("Array numbers: " + str(_numbers[0]) + ", " + str(_numbers[1]))
+  
+    print("############################# Lists #####################################")
+    _minions = ["Kevin", "Bob", "Stuart", "Dave"]
+    print("Before sort: {0}, {1}, {2}, {3}".format(_minions[0], _minions[1], _minions[2], _minions[3]))
+    _minions.sort()
+    print("After sorted ascending: {0}, {1}, {2}, {3}".format(_minions[0], _minions[1], _minions[2], _minions[3]))
+    
+    print("########################### Dictionaries ##################################")
+    _moreMinions = {}
+    _moreMinions['A'] = "Bob"
+    _moreMinions['B'] = "Stuart"
+    _moreMinions['C'] = "Dave"
+    _moreMinions['4'] = "Kevin"
+    print(_moreMinions["4"])
+    
 ###################################### Main #####################################
 main()
