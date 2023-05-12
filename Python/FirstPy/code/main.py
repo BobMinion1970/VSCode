@@ -27,7 +27,7 @@ class Customer(Person):
 ########################################### Functions ####################################
 def main():
     try:
-        TestCollections()
+        TestFunctions()
         #TestArrayHandling()
     except Exception as e: 
         print(e.__str__())
@@ -99,6 +99,25 @@ def TestCollections():
     _moreMinions['C'] = "Dave"
     _moreMinions['4'] = "Kevin"
     print(_moreMinions["4"])
+
+def TestLoops():
+    #for index in range(0,2):
+    #    print(index)
+    _people = ["Bob", "Stuart"]
+    _index = 0
     
+    for _name  in _people:
+        print(_name)
+def GetInitial(name, uppercase=True):      
+    if uppercase == True:
+        return name[0].upper()
+    else:
+        return name[0]
+        
+def TestFunctions():
+    _names = ["bob", "dave", "stuart"]
+    for _name in _names:
+        print(GetInitial(_name, uppercase=False))
+  
 ###################################### Main #####################################
 main()
