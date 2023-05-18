@@ -27,23 +27,14 @@ class Customer(Person):
 ########################################### Functions ####################################
 def main():
     try:
-        TestFunctions()
-        #TestArrayHandling()
+        #TestFunctions()
+        TestArrayHandling()
     except Exception as e: 
         print(e.__str__())
     finally:
         print("Good bye, have pleasure wherever you are!")
      
 def TestArrayHandling():
-    print ("Hello PyWorld")
-    _name = input("Gib was ein: ") 
-    print(_name)
-    if _name == "Python":           # : und einrücken der nächsten Zeile!
-        print("Checkedin in PyWorld")
-        print("********************")
-    else:
-        print("Failure")
-
     _namelist = []
     _namelist.append("Kevin")
     _namelist.append("Bob")
@@ -53,7 +44,7 @@ def TestArrayHandling():
     except:
         print("Tom does not exist!")
         print("Jerry does not exist!")
-        raise Exception("Tom does not exist")
+        #raise Exception("Tom does not exist")
     
     _length = len(_namelist)
     _index = 0
@@ -62,6 +53,19 @@ def TestArrayHandling():
         print(_namelist[_index])
         _index = _index + 1
 
+    _person = ["Bob", ["91054", "Fürth", "Saidelsteig", "9"]]
+    _person.append(["Table tennis","Chess", "Board games"])
+    print("********************* Complex Array *******************")
+    print("Name: " + _person[0] )
+    print("Postal code: " + _person[1][0])
+    print("City: " + _person[1][1])
+    print("Street: " + _person[1][2])
+    print("Number: " + _person[1][3])
+    print("Hobbies are: ")
+    for _hobby in _person[2]:
+        print(_hobby)
+        
+    
 def TestClasses():
     p2 = Person("Michael", "Büchenbach", "01.01.2001")
     #print(p1.__dict__())
@@ -108,6 +112,8 @@ def TestLoops():
     
     for _name  in _people:
         print(_name)
+# Parameters: uppercase, default = True
+#             name: string
 def GetInitial(name, uppercase=True):      
     if uppercase == True:
         return name[0].upper()
