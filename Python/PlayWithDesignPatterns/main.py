@@ -1,3 +1,8 @@
+# pylint: disable=missing-module-docstring
+# pylint: disable=missing-class-docstring
+# pylint: disable=missing-function-docstring
+# pylint: disable=invalid-name
+
 ####################################### Functions ###################################
 import datetime
 
@@ -14,9 +19,8 @@ def logger(func):
 @logger
 def myfunc():
     print("Inside myfunc")
-    
+
 def main():
     test_decorator()
-    
 ####################################### Main ########################################
 main()
