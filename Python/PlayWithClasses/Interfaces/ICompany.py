@@ -2,7 +2,8 @@
 # pylint: disable=missing-class-docstring
 # pylint: disable=missing-function-docstring
 # pylint: disable=invalid-name
+from abc import ABC, abstractmethod, abstractproperty
 
-class Company:
+class ICompany:
     def __init__(self):
         pass
