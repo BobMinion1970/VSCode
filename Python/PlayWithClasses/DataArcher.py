@@ -2,11 +2,11 @@
 # pylint: disable=missing-class-docstring
 # pylint: disable=missing-function-docstring
 # pylint: disable=invalid-name
-from abc import ABC, abstractmethod, abstractproperty
+from dataclasses import dataclass
 
-class ICompany(ABC):
+@dataclass()
+class DataArcher():
+    _id: str
+    _hitpoints: int = 0
+    _arrows: int = 0
     
-    @abstractmethod
-    def add(self, other):
-       pass
-   

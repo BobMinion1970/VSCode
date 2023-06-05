@@ -1,1 +1,1 @@
-# marks safe import folder
+# marks subfolder \Classes as safe import folder
