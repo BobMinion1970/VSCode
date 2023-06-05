@@ -2,7 +2,6 @@
 # pylint: disable=missing-class-docstring
 # pylint: disable=missing-function-docstring
 # pylint: disable=invalid-name
-# pylint: disable=import-error
 import sys
 import os
 
