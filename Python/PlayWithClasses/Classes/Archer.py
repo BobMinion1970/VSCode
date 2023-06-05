@@ -3,22 +3,26 @@
 # pylint: disable=missing-function-docstring
 # pylint: disable=invalid-name
 from IArcher import IArcher
+from DataArcher import DataArcher
 
-class Archer(IArcher):
-
+class Archer(DataArcher, IArcher):
     def __init__(self, id: int, hitpoints: int, arrows: int):
-        self._id = id
-        self._hitpoints = hitpoints
-        self._arrows = arrows
-    
+        super().__init__(id, hitpoints, arrows)
+        # _id = id
+        # _hitpoints = hitpoints
+        # _arrows = arrows 
+            
     def __str__(self):
-        return f"Archer ID: {str(self._id)}, hitpoints: {str(self._hitpoints)}, arrows: {self._arrows}"
+        return f"Archer ID: {str(self._id)}, hitpoints: {str(self._hitpoints)}, arrows: {str(self._arrows)}"
     
     def shoot(self):
-        if self._arrows >= 1:
-            self._arrows -= 1
-        else:
-            raise ValueError
+        try:
+            if self._arrows >= 1:
+                self._arrows -= 1
+            else:
+                raise ValueError
+        except RuntimeError as e: 
+            print(e.__str__())
         
     def increase_arrows(self, new_arrows:int):
         self._arrows += new_arrows
