@@ -4,30 +4,32 @@
 # pylint: disable=invalid-name
 # pylint: disable=import-error
 
-import sys
-import os
-
-path = os.getcwd()
-sys.path.insert(0, path)
-sys.path.append(path + "\\Classes")
-sys.path.append(path + "\\Interfaces")
-
-from Archer import Archer
-from ICompany import ICompany
-from Company import Company
 # import pdb
+# import os
+# import sys
+# pdb.set_trace()
+# _rootpath = os.getcwd()
+# _mainpath = _rootpath + "\\Python\\PlayWithClasses"
+# os.chdir(_mainpath)
+# # sys.path.append(_path)
+
+from Classes import Archer
+from Interfaces import ICompany
+from Classes import Company
+
 ######################################## Functions ####################################
 def main():
+   
     try: 
         print("################################### WOA ###################################")
         print("######################## World of Archers started #########################")
         # pdb.set_trace()
-        _archer1 = Archer(1001, 10, 100)
+        _archer1 = Archer.Archer(1001, 10, 100)
         print(_archer1)
         print("Archer1 shoots one arrow")
         _archer1.shoot()
         print(_archer1)
-        _archer2 = Archer(2002,20, 200)
+        _archer2 = Archer.Archer(2002,20, 200)
         print(_archer2)
         print("Archer2 shoots one arrow")
         _archer2.shoot()
@@ -38,9 +40,8 @@ def main():
             print(_archer1.magic)
         except AttributeError: 
             print("Attribute Error caught: No attribute <magic> in instance archer1")
-
-        _company: ICompany
-        _company = Company()
+        
+        _company = Company.Company()
         # pdb.set_trace()
         _company.add(_archer1)
         _company.add(_archer2)

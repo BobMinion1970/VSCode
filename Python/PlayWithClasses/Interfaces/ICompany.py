@@ -8,5 +8,6 @@ class ICompany(ABC):
     
     @abstractmethod
     def add(self, other):
-       pass
+        pass
+   
    

@@ -3,11 +3,11 @@
 # pylint: disable=missing-function-docstring
 # pylint: disable=invalid-name
 #import pdb
-from IArcher import IArcher 
-from ICompany import ICompany
+from Interfaces.IArcher import IArcher 
+from Interfaces.ICompany import ICompany
 
 class Company(ICompany):
-    
+        
     def __init__(self):
         self._archers = []
     
@@ -15,14 +15,13 @@ class Company(ICompany):
         #pdb.set_trace()
         _retval = ""
         for a in self._archers:
-            _retval += str(a._id) + ": " + str(a._hitpoints) + ": " + str(a._arrows) + "\n"
+            _retval += str(a._myid) + ": " + str(a._hitpoints) + ": " + str(a._arrows) + "\n"
         return _retval
          
     def __repr__(self):
-        pdb.set_trace()
         _retval = ""
         for a in self._archers:
-            _retval = str(a._id) + ": " + str(a._hitpoints) + ": " + str(a._arrows) + "\n"
+            _retval = str(a._myid) + ": " + str(a._hitpoints) + ": " + str(a._arrows) + "\n"
         return _retval
                   
     def add(self, other):
