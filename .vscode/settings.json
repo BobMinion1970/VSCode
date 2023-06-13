@@ -1,9 +1,11 @@
 {
     "python.analysis.extraPaths": [
-        "./Python/PlayWithClasses/Interfaces"
+        "./Python/PlayWithClasses/Interfaces",
+        "./Python/PlayWithClasses/Classes"
     ],
     "python.autoComplete.extraPaths": [
-
+        "./Python/PlayWithClasses/Interfaces",
+        "./Python/PlayWithClasses/Classes"
 
     ]
 }

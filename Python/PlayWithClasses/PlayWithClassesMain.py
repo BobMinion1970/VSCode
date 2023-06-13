@@ -15,7 +15,9 @@
 
 from Classes import Archer
 from Interfaces import ICompany
+from Interfaces import IBow
 from Classes import Company
+from Classes import ElveBow
 
 ######################################## Functions ####################################
 def main():
@@ -53,8 +55,17 @@ def main():
         print(_archer1)
         print("Company:")
         print(_company.__str__())
+        try:
+            _elveBow1 = ElveBow.ElveBow(strength = "Strong", material = "Oak")
+            print(_elveBow1)
+            _elveBow1.strength = "Medium"
+        except AttributeError as e:
+            print("Setter missing: " + e.__str__() )
+        
+        print("Changed bow:" + _elveBow1.__str__())
     except ValueError as e:
         print(e.__str__())
+    
 
 ########################################### Main ######################################
 main()

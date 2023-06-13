@@ -12,7 +12,7 @@
             "console": "integratedTerminal",
             "justMyCode": true,
              // "env": { "PYTHONPATH": "${workspaceRoot}"
-             "env": { "PYTHONPATH": "E:\\Develop\\Projects\\TAT\\VSCode\\Python\\PlayWithClasses"
+             "env": { "PYTHONPATH": "E:\\Develop\\Projects\\TAT\\VSCode\\Python\\PlayWithClasses"}
         }
     ]
 }
