@@ -3,16 +3,16 @@
 # pylint: disable=missing-function-docstring
 # pylint: disable=invalid-name
 #import pdb
-from typing import Any
-
 
 class MyDescriptor():
+    def __set__name__(self, owner, name):
+        self.name = name
     
-    def __init__(self, value) -> None:
-        self._value = value
+    # def __init__(self, value) -> None:
+    #     self._value = value
     
-    def __getattr__(self, name: str) -> Any:
-        return self.__dic__[name]
+    def __get__(self, instance, objtpye=None) -> object:
+        return instance.__dict__.get(self.name)
     
-    def __setattr__(self, name: str, value: Any) -> None:
-       self.__dict__[name] = value
+    def __set__(self, instance, value) -> None:
+        instance.__dict__[self.name] = value

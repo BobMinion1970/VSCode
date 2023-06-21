@@ -3,14 +3,18 @@
 # pylint: disable=missing-function-docstring
 # pylint: disable=invalid-name
 #import pdb
-import .MyDescriptor
+from .MyDescriptor import MyDescriptor
 
 class ArcherWithDescriptor():
-   
+       
+    _hitpoints = MyDescriptor()
+    _arrows = MyDescriptor()
+    _myid = MyDescriptor()
+    
     def __init__(self, myid: int, hitpoints: int, arrows:int) -> None:
-        self._myid = MyDescriptor(myid)
-        self._hitpoints = MyDescriptor(hitpoints)
-        self._arrows = MyDescriptor(arrows)
+        _myid = myid
+        _hitpoints =hitpoints
+        _arrows = arrows
         
-    def __str__(self):
-        return f"Archer ID: {str(self._myid)}, hitpoints: {str(self._hitpoints)}, arrows: {str(self._arrows)}"
+    def __str__(self) -> str:
+        return f"Archer ID: {str(self._myid._value)}, hitpoints: {str(self._hitpoints._value)}, arrows: {str(self._arrows._value)}"

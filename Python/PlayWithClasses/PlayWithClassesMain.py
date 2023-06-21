@@ -73,8 +73,11 @@ def main():
         # print object dictionary as json structure 
         print("Archer 1: " + _archer1.toJson())
         print("Archer 2: " + _archer2.toJson())  # dynamic attribute magic will be printed
-        _archer3 = ArcherWithDescriptor(myid=3003, hitpoint = 10, arrows=100)
-        print(f"Archer with Dewcriptor: {_archer3}")
+        _archer3 = ArcherWithDescriptor.ArcherWithDescriptor(myid=3003, hitpoints = 10, arrows=100)
+       
+        print(f"Archer 3 with Descriptor: {_archer3}")
+        _archer3.hitpoints = 33
+        print(f"Archer 3 after changing hitpoints: {_archer3}")
     except ValueError as e:
         print(e.__str__())
     
