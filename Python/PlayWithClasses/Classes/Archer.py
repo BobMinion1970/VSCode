@@ -3,6 +3,7 @@
 # pylint: disable=missing-function-docstring
 # pylint: disable=invalid-name
 
+import json
 from .DataArcher import DataArcher
 from Interfaces.IArcher import IArcher
 
@@ -31,4 +32,7 @@ class Archer(DataArcher, IArcher):
         
     def increase_arrows(self, new_arrows:int):
         self._arrows += new_arrows
+        
+    def toJson(self):
+        return json.dumps(self, default=lambda o: o.__dict__)
         

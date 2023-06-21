@@ -30,5 +30,7 @@ class Company(ICompany):
     def __add__(self, other):
         if isinstance(other, IArcher):
             self._archers.append(other)
+        else:
+            raise TypeError
          
         

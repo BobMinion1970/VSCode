@@ -12,4 +12,8 @@ class IArcher(ABC):
     @abstractmethod
     def increase_arrows(self, new_arrows:int):
         pass
-        
+   
+    @abstractmethod
+    def toJson(self):
+        pass
+    
