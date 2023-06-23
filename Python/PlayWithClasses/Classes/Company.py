@@ -7,13 +7,16 @@ from Interfaces.IArcher import IArcher
 from Interfaces.ICompany import ICompany
 
 class Company(ICompany):
+    maxcount : int = 100
         
-    def __init__(self):
+    def __init__(self, companyname):
         self._archers = []
+        self._companyname = companyname
+        self._actualcount = 0
     
     def __str__(self):
         #pdb.set_trace()
-        _retval = ""
+        _retval = f"Company name: {self._companyname}\nMax count: {Company.maxcount}\nActual count: {self._actualcount}\nArchers:\n" 
         for a in self._archers:
             _retval += str(a._myid) + ": " + str(a._hitpoints) + ": " + str(a._arrows) + "\n"
         return _retval
@@ -30,6 +33,18 @@ class Company(ICompany):
     def __add__(self, other):
         if isinstance(other, IArcher):
             self._archers.append(other)
+            self._actualcount += 1
+        else:
+            raise TypeError
+        
+    @property 
+    def actualcount(self) -> int:
+        return self._actualcount
+    
+    @actualcount.setter
+    def strength(self, value: int) -> None:
+        if type(value) == int:
+            self._actualcount = value
         else:
             raise TypeError
          

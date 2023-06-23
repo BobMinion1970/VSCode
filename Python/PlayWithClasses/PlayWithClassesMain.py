@@ -44,17 +44,17 @@ def main():
         except AttributeError: 
             print("Attribute Error caught: No attribute <magic> in instance archer1")
         
-        _company = Company.Company()
+        _company = Company.Company("Praetorians")
         # pdb.set_trace()
         _company.add(_archer1)
         _company.add(_archer2)
+        _company2 = Company.Company("Swiss Guard")
         #print(_company._archers)
-        print("Company: ")
         print(_company.__str__())
+        print(_company2.__str__())
         _archer1.increase_arrows(150)
         print("Added 150 arrows to Archer1")
         print(_archer1)
-        print("Company:")
         print(_company.__str__())
         try:
             _elveBow1 = ElveBow.ElveBow(strength = "Strong", material = "Oak")
@@ -70,10 +70,11 @@ def main():
         except TypeError as _e: 
             print("My wished error is: TypeError" + _e.__str__())
         
+        
         # print object dictionary as json structure 
         print("Archer 1: " + _archer1.toJson())
         print("Archer 2: " + _archer2.toJson())  # dynamic attribute magic will be printed
-        _archer3 = ArcherWithDescriptor.ArcherWithDescriptor(myid=3003, hitpoints = 10, arrows=100)
+        _archer3 = ArcherWithDescriptor.ArcherWithDescriptor(3003, 10, 100)
        
         print(f"Archer 3 with Descriptor: {_archer3}")
         _archer3.hitpoints = 33
