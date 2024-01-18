@@ -35,3 +35,11 @@ class ICustomer(ABC):
     @abstractmethod
     def getFullName(self):
         pass
+    
+    @abstractmethod
+    def AddMoneyToAccount(self, amount: float) -> float:
+        pass
+    
+    @abstractmethod
+    def RemoveMoneyFromAccount(self, amount: float) -> float:
+        pass

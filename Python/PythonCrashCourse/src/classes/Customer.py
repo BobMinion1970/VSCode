@@ -15,11 +15,24 @@ class Customer(ICustomer):
     def getFullName(self) -> str:
         return self._firstname + " " + self._lastname
     
+    def AddMoneyToAccount(self, amount: float) -> float:
+       self.account.amount += amount
+       return self.account.amount
+    
+    def RemoveMoneyFromAccount(self, amount: float) -> float:
+        if self.account.amount - amount > 0:
+            self.account.amount -= amount
+        else: 
+            raise ArithmeticError("Credit is less than the required amount")
+        
+        return self.account.amount - amount
+            
+    
     @property
     def lastname(self) -> str:
         return self._lastname
     @lastname.setter
-    def lastname(self, value: str):
+    def lastname(self, value: str) -> None:
         self._lastname = value
         
     @property
