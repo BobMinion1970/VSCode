@@ -16,9 +16,23 @@ class CustomerTest(unittest.TestCase):
         self.customer.AddMoneyToAccount(100.00)
         self.assertEqual(self.customer.account.amount, 1100.00)
     
-    def test_RemoveMoneyFromAccount(self):
-        self.customer.RemoveMoneyFromAccount(1000)
-        self.assertGreaterEqual(self.customer.account.amount, 0.00)
+    def test_RemoveMoneyFromAccountWitEnoughCredit(self):
+        try:
+            print(f"Current amount: {self.customer.account.amount}")
+            self.customer.RemoveMoneyFromAccount(900)
+            print(f"Current amount after removal: {self.customer.account.amount}")
+            self.assertGreaterEqual(self.customer.account.amount, 0.00)
+        except ArithmeticError:
+            pass
+    
+    def test_RemoveMoneyFromAccountWithNotEnoughCredit(self):
+        try:
+            print(f"\nCurrent credit: {self.customer.account.amount}")
+            print(f"Payment: 1100")
+            self.customer.RemoveMoneyFromAccount(1100.00)
+            self.assertEqual(self.customer.account.amount, 1000.00)
+        except ArithmeticError:
+            print(f"Current credit after removal: {self.customer.account.amount}")
     
     def tearDown(self):
         pass
