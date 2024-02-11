@@ -6,6 +6,14 @@ from abc import ABC, abstractmethod
 from src.interfaces.IAccount import IAccount
 class ICustomer(ABC):
     # attributes
+    @property 
+    @abstractmethod
+    def customerid(self) -> int:
+        pass
+    @customerid.setter
+    def customerid(self, value) -> None:
+        pass
+
     @property
     @abstractmethod
     def firstname(self) -> str: 
@@ -20,7 +28,7 @@ class ICustomer(ABC):
         pass 
     
     @lastname.setter
-    def lastname(self, value):
+    def lastname(self, value) -> None:
         pass
     
     @property 
@@ -28,12 +36,12 @@ class ICustomer(ABC):
     def account(self) -> IAccount:
         pass
     @account.setter
-    def account(self, value: IAccount):
+    def account(self, value: IAccount) -> None:
         pass
     
     # methods
     @abstractmethod
-    def getFullName(self):
+    def getFullName(self) -> str:
         pass
     
     @abstractmethod

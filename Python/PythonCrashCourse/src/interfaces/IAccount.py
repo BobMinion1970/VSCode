@@ -8,5 +8,5 @@ class IAccount(ABC):
         pass
 
     @amount.setter
-    def amount(self, value: float):
+    def amount(self, value: float) -> None:
         pass

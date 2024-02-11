@@ -7,7 +7,8 @@ from src.interfaces.IAccount import IAccount
 
 class Customer(ICustomer):
     
-    def __init__(self, firstname : str ="", lastname : str ="", account: IAccount =None) -> None:
+    def __init__(self, customerid : int = 0, firstname : str ="", lastname : str ="", account: IAccount =None) -> None:
+        self._customerid = customerid 
         self._firstname = firstname
         self._lastname = lastname
         self._account = account
@@ -15,18 +16,30 @@ class Customer(ICustomer):
     def getFullName(self) -> str:
         return self._firstname + " " + self._lastname
     
+    def getFullNameWithID() -> str:
+        pass 
+    
     def AddMoneyToAccount(self, amount: float) -> float:
-       self.account.amount += amount
-       return self.account.amount
+        if amount >= 0:
+            self.account.credit += amount     
+        else:
+            raise ArithmeticError("Amount is negative")
     
     def RemoveMoneyFromAccount(self, amount: float) -> float:
-        if self.account.amount - amount > 0:
-            self.account.amount -= amount
+        if self.account.credit - amount > 0:
+            self.account.credit -= amount
         else: 
             raise ArithmeticError("Credit is less than the required amount")
         
-        return self.account.amount - amount
+        return self.account.credit - amount
             
+    @property
+    def customerid(self) -> int:
+        return self._customerid
+    
+    @customerid.setter
+    def customerid(self, value) -> None:
+        self._customerid = value
     
     @property
     def lastname(self) -> str:

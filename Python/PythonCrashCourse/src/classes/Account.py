@@ -3,11 +3,11 @@ from src.interfaces.IAccount import IAccount
 class Account(IAccount):
     
     def __init__(self, amount=0) -> None:
-        self._amount = amount
+        self._credit = amount
 
     @property
-    def amount(self) -> float:
-        return self._amount  
+    def credit(self) -> float:
+        return self._credit  
     @amount.setter
-    def amount(self, value: float):
-        self._amount = value
+    def credit(self, value: float) -> None:
+        self._credit = value
