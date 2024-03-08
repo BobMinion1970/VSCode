@@ -10,28 +10,30 @@ class CustomerTest(unittest.TestCase):
         self.account: IAccount = None
         self.customer: ICustomer = None
         self.account = Account(1000.00)
-        self.customer = Customer("Bob", "Minion", self.account)
+        self.customer = Customer("Bob", "Minion")
+        self.customer.account = self.account
+        print("After setup: " +str(self.customer.account.credit))
     
     def test_AddMoneyToAccount(self): 
         self.customer.AddMoneyToAccount(100.00)
-        self.assertEqual(self.customer.account.amount, 1100.00)
+        self.assertEqual(self.customer.account.credit, 1100.00)
     
     def test_AddNegativeMoneyToAccount(self):                  
         with self.assertRaises(ArithmeticError): 
             self.customer.AddMoneyToAccount(-100.00)
             
     def test_RemoveMoneyFromAccountWitEnoughCredit(self):
-        print(f"Current amount: {self.customer.account.amount}")
+        print(f"Current credit: {self.customer.account.credit}")
         self.customer.RemoveMoneyFromAccount(900)
-        print(f"Current amount after removal: {self.customer.account.amount}")
-        self.assertGreaterEqual(self.customer.account.amount, 0.00)
+        print(f"Current credit after removal: {self.customer.account.credit}")
+        self.assertGreaterEqual(self.customer.account.credit, 0.00)
     
     def test_RemoveMoneyFromAccountWithNotEnoughCredit(self):
-        print(f"\nCurrent credit: {self.customer.account.amount}")
+        print(f"\nCurrent credit: {self.customer.account.credit}")
         print(f"Payment: 1100")
         with self.assertRaises(ArithmeticError):
              self.customer.RemoveMoneyFromAccount(1100.00)
-             print(f"Current credit after removal: {self.customer.account.amount}")
+             print(f"Current credit after removal: {self.customer.account.credit}")
     
     def tearDown(self):
         pass
