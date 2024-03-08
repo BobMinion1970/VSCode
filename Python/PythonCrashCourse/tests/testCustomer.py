@@ -35,7 +35,7 @@ class CustomerTest(unittest.TestCase):
              self.customer.RemoveMoneyFromAccount(1100.00)
              print(f"Current credit after removal: {self.customer.account.credit}")
     
-    def test_Getter_FirstName(self): 
+    def test_GetterFirstName(self): 
         self.assertEqual(self.customer.firstname, "Bob")
     
     def test_SetterFirstName(self): 
