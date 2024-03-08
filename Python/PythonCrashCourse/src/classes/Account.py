@@ -8,6 +8,6 @@ class Account(IAccount):
     @property
     def credit(self) -> float:
         return self._credit  
-    @amount.setter
+    @credit.setter
     def credit(self, value: float) -> None:
         self._credit = value

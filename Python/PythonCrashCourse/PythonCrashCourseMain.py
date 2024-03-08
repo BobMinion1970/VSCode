@@ -18,7 +18,7 @@ def main() -> None:
     customer1 = Customer(1000, "Bob", "Minion", account1)
     print("Name by method GetFullName")
     print(customer1.getFullName())
-    print("Amount customer1: " + str(customer1.account.amount))
+    print("Amount customer1: " + str(customer1.account.credit))
     
     account2 = Account(2000.33)
     customer2 = Customer();
@@ -27,21 +27,21 @@ def main() -> None:
     customer2.account = account2
     print("Name by properties")
     print(customer2.firstname + ", " + customer2.lastname)
-    print("Amount customer2: " + str(customer2.account.amount))
+    print("Credit customer2: " + str(customer2.account.credit))
     customer2.AddMoneyToAccount(2.22)
-    print(f"Actual amount: {customer2.account.amount}")
+    print(f"Actual credit: {customer2.account.credit}")
     try: 
         customer2.AddMoneyToAccount(-300)
     except ArithmeticError:
-          print(f"Amount may not be negative")
+          print(f"Credit may not be negative")
     try:
         customer2.RemoveMoneyFromAccount(500)
-        print(f"Actual amount: {customer2.account.amount}")
+        print(f"Actual credit: {customer2.account.credit}")
         
         customer2.RemoveMoneyFromAccount(2000)
-        print(f"Actual credit: {customer2.account.amount}")
+        print(f"Actual credit: {customer2.account.credit}")
     except ArithmeticError: 
-        print(f"Credit ist too low: {customer2.account.amount} Please reduce the required withdrawal: 2000")
+        print(f"Credit is too low: {customer2.account.credit} Please reduce the required withdrawal: 2000")
 
 
 ############################################### Main ###########################################

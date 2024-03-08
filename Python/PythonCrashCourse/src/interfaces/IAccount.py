@@ -4,9 +4,8 @@ class IAccount(ABC):
     # attributes
     @property
     @abstractmethod
-    def amount(self) -> float:
+    def credit(self) -> float:
         pass
-
-    @amount.setter
-    def amount(self, value: float) -> None:
+    @credit.setter
+    def credit(self, value: float) -> None:
         pass
