@@ -10,7 +10,7 @@ class CustomerTest(unittest.TestCase):
         self.account: IAccount = None
         self.customer: ICustomer = None
         self.account = Account(1000.00)
-        self.customer = Customer("Bob", "Minion")
+        self.customer = Customer(1000, "Bob", "Minion")
         self.customer.account = self.account
         print("After setup: " +str(self.customer.account.credit))
     
@@ -34,6 +34,15 @@ class CustomerTest(unittest.TestCase):
         with self.assertRaises(ArithmeticError):
              self.customer.RemoveMoneyFromAccount(1100.00)
              print(f"Current credit after removal: {self.customer.account.credit}")
+    
+    def test_Getter_FirstName(self): 
+        self.assertEqual(self.customer.firstname, "Bob")
+    
+    def test_SetterFirstName(self): 
+        print(f"\nCurrent first name: {self.customer.firstname}")
+        self.customer.firstname = "Kevin"
+        self.assertEqual(self.customer.firstname, "Kevin")
+        print(f"Changed first name: {self.customer.firstname}")
     
     def tearDown(self):
         pass
