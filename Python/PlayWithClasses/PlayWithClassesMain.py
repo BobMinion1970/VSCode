@@ -47,7 +47,7 @@ def main():
         _company = Company.Company("Praetorians")
         # pdb.set_trace()
         _company.add(_archer1)
-        _company.add(_archer2)000
+        _company.add(_archer2)
         _company2 = Company.Company("Swiss Guard")
         #print(_company._archers)
         print(_company.__str__())
