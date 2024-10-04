@@ -19,6 +19,7 @@ from Classes import Archer
 from Classes import Company
 from Classes import ElveBow
 from Classes import ArcherWithDescriptor
+from Classes import Equastrian
 
 ######################################## Functions ####################################
 def main():
@@ -47,7 +48,7 @@ def main():
         _company = Company.Company("Praetorians")
         # pdb.set_trace()
         _company.add(_archer1)
-        _company.add(_archer2)000
+        _company.add(_archer2)
         _company2 = Company.Company("Swiss Guard")
         #print(_company._archers)
         print(_company.__str__())
@@ -79,6 +80,14 @@ def main():
         print(f"Archer 3 with Descriptor: {_archer3}")
         _archer3.hitpoints = 33
         print(f"Archer 3 after changing hitpoints: {_archer3}")
+        
+        _equastrian1 = Equastrian.Equastrian()
+        _equastrian1.weapon = "Sword"
+        print("Weapon of euqastrian1: " +  _equastrian1.weapon)
+        
+        _equastrian2 = Equastrian.Equastrian()
+        _equastrian2.weapon = "Long lance"
+        print("Weapon of euqastrian2: " +  _equastrian2.weapon)
     except ValueError as e:
         print(e.__str__())
     
