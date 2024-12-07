@@ -21,7 +21,7 @@ def main() -> None:
     print("Amount customer1: " + str(customer1.account.credit))
     
     account2 = Account(2000.33)
-    customer2 = Customer();
+    customer2 = Customer()
     customer2.firstname = "Kevin"
     customer2.lastname = "Minion"
     customer2.account = account2
@@ -33,7 +33,7 @@ def main() -> None:
     try: 
         customer2.AddMoneyToAccount(-300)
     except ArithmeticError:
-          print(f"Credit may not be negative")
+        print(f"Credit may not be negative")
     try:
         customer2.RemoveMoneyFromAccount(500)
         print(f"Actual credit: {customer2.account.credit}")
@@ -46,4 +46,5 @@ def main() -> None:
 
 ############################################### Main ###########################################
 main()
+
 
