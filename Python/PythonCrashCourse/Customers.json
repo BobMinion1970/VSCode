@@ -1,0 +1,17 @@
+{ "Customers": [
+    { 
+        "customerid": 1000,
+        "firstname": "Bob",
+        "lastname": "Minion",
+        "accountid": 1 },
+    {
+        "customerid": 1001,
+        "firstname": "Kevin",
+        "lastname": "Minion",
+        "accountid": 2 },
+    {
+        "customerid": 1002,
+        "firstname": "Stuart",
+        "lastname": "Minion",
+        "accountid": 11 }]
+}
