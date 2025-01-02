@@ -38,7 +38,6 @@ def main() -> None:
                 if customerlist[index]["firstname"] == searchfirstname:
                     print(customerlist[index])
                 
-           
         except FileNotFoundError:
             print(f"File not found: {input_file}")
         except Exception:
