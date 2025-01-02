@@ -24,7 +24,7 @@ def mainmenue() -> None:
     global db
     global cursor
     try:
-        db = sqlite3.connect("E:\Develop\Projects\TAT\VSCode\Python\PlayWithDatabase\PlayWithDatabase.db")
+        db = sqlite3.connect("D:\Develop\Projects\TAT\VSCode\Python\PlayWithDatabase\PlayWithDatabase.db")
         cursor = db.cursor()
         #dbcustomer = new DBCustomer(db, cursor)
         
