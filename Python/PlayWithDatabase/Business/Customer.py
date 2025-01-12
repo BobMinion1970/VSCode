@@ -4,4 +4,3 @@ class Customer:
         self._firstname = firstname
         self._lastname = lastname
         self._birthday = birthday
-        
