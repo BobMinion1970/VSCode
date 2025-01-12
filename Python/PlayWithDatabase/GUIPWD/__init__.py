@@ -1,0 +1,1 @@
+# marks subfolder /GUIPWD folder as safe import folder
