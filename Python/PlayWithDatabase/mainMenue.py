@@ -1,13 +1,12 @@
 import os
 import logging
-#from GUIPWD import selectCustomerMenue
 from Database import DB
 from GUIPWD import selectCustomerMenue, createCustomerMenue, listCustomerMenue
-
+    
 def mainmenue(db: DB.DBSingleton) -> None:
+    
     _menueselection : str = ""
-   
-        
+      
     while _menueselection != "x":
         os.system("cls")
         print(dir(__builtins__))
