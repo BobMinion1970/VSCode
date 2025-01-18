@@ -1,0 +1,11 @@
+# Environments
+.env
+env/
+ENV/
+
+## Virtual environments
+.venv
+venv/git merge 
+__pycache__/
+PlayWithDatabase.db
+
