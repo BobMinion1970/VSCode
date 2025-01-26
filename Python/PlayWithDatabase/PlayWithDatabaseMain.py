@@ -11,12 +11,11 @@ import sqlite3
 import logging
 from pathlib import Path
 
-try:
+try: 
     _mainpath = os.getcwd()
     sys.path.append(_mainpath + '\\Database')
     sys.path.append(_mainpath + '\\Business')
-    sys.path.append(_mainpath +  '\\GUIPWD')
-      
+    sys.path.append(_mainpath +  '\\GUIPWD')      
 except FileNotFoundError:
     pass   
 
