@@ -1,10 +1,10 @@
 FROM node:lts-alpine
-# copy source code to docker image 
-WORKDIR /app
-COPY . . 
-# install dependencies by using npm install 
-RUN npm install 
-# provide port for tools
+ENV NODE_ENV=production
+WORKDIR /usr/src/app
+COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
+RUN npm install --production --silent && mv node_modules ../
+COPY . .
 EXPOSE 3000
-# define start commando by using npm start
-CMD npm start
+RUN chown -R node /usr/src/app
+USER node
+CMD ["npm", "start"]
