@@ -1,0 +1,1 @@
+# marks subfolder \PlayWithDatabase folder as safe import folder
