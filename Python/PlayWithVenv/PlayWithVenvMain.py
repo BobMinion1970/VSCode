@@ -15,9 +15,15 @@ def main() -> None:
     accounts.add_account(account1)
     account2 = Account.Account(1001, "S100", 412.00)
     accounts.add_account(account2)
-
-    print("Account list: ")
+    account3 = Account.Account(1002, "S101", 1000.00)
+    accounts.add_account(account3)
+    
+    print("************************* Account list ******************************")
+    print("Account whole list: ")
     for account in accounts.accounts:
         print (account.__dict__)
+
+    sum = accounts.get_deposit_sum_of_customer("S100")
+    print(f"Balance sum of customer  S100: {sum}")
 
 main()
