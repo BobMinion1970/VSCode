@@ -1,8 +1,13 @@
+import tomllib
+import src.config
 from src.business import Account
 from src.business import Customer
 from src.database import Accounts
 
+
 def main() -> None:
+    print(src.config.appconfig)
+
     accounts = Accounts.Accounts()
 
     customer1: Customer.Customer = Customer.Customer("S100", "Minion", "Bob", 1000)
@@ -26,4 +31,5 @@ def main() -> None:
     sum = accounts.get_deposit_sum_of_customer("S100")
     print(f"Balance sum of customer  S100: {sum}")
 
-main()
+if __name == "__main__":
+    main() 

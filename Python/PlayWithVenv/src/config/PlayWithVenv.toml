@@ -1,0 +1,4 @@
+[server]
+servername = "MyServer"
+connectionstring = "MyConnectionString"
+cube = "MyCube"
