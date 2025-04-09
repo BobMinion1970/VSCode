@@ -1,5 +1,7 @@
 #include <stdio.h>
-#include "Calculator.h"
+#include "./src/Calculator.h"
+
+int add(int op1, int op2);
 
 int main(void)
 {
