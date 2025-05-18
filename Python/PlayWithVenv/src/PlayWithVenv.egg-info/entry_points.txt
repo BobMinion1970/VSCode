@@ -1,0 +1,2 @@
+[console_scripts]
+pwv = PlayWithVenv.__main__:main

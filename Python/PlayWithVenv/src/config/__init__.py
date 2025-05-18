@@ -1,3 +1,4 @@
+# marks subfolder /PlayWithVenv/srs/config as safe import folder
 import pathlib
 import tomllib
 
