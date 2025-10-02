@@ -5,7 +5,6 @@ os.chdir("..")
 
 from src.business import Account
 from src.business import Customer
-from src.database import Accounts
 
 class Test_Account(unittest.TestCase):
     def setUp(self):
