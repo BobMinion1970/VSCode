@@ -17,6 +17,10 @@ int main(void)
     result = sub(op1, op2);
     printf("%d + %d is: %d\n", op1, op2, result);
     
+    result = div(op1, op2);
+    if(result == 0) 
+        print("Error division: operand 2 must not be zero!");
+    else 
+        printf("%d + %d is: %d\n", op1, op2, result);
     return 0;
-
 }
